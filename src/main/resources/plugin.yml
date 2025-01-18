@@ -1,0 +1,14 @@
+name: CropProcess
+main: fan.cropsprocess.com.Main
+version: 1.0
+author: lk
+api-version: 1.13
+softdepend:
+  - PlaceholderAPI
+commands:
+  cp:
+    usage: /cp
+    description: CropsProcess
+  market:
+    usage: /market
+    description: 市场交易

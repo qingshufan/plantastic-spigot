@@ -1,0 +1,135 @@
+#  invType -> https://bukkit.windit.net/javadoc/org/bukkit/event/inventory/InventoryType.html
+#  itemType -> https://bukkit.windit.net/javadoc/org/bukkit/Material.html
+#  colorSign -> '&' replaced  '§'
+skillTree:
+  hub:
+    invType: "HOPPER"
+    invTitle: "&2科技树主门户"
+    contents:
+      seed:
+        index: 1
+        itemType: "WHEAT"
+        name: "&2种子影响"
+        lore:
+          - '&f更低患病率'
+          - '&f更高抗逆性'
+          - '&f更高产量率'
+          - '&f...'
+      book:
+        index: 2
+        itemType: "BOOK"
+        name: "&6种子图鉴"
+        lore:
+          - '&f更强大的科研品种解锁'
+          - '&f...'
+      tool:
+        index: 3
+        itemType: "IRON_HOE"
+        name: "&b工具使用"
+        lore:
+          - '&f更快的圈地'
+          - '&f更高的收劃速度'
+          - '&f...'
+  seed:
+    invType: "HOPPER"
+    invTitle: "&2种子影响"
+    contents:
+      prevalence_level: #患病率
+        index: 1
+        itemType: "POISONOUS_POTATO"
+        name: "&2患病率科研"
+        lore:
+          - '&f消耗5金币提升一次科研水平'
+      resistance_level: #抗逆性
+        index: 2
+        itemType: "DRIED_KELP"
+        name: "&2抗逆性科研"
+        lore:
+          - '&f消耗5金币提升一次科研水平'
+      yield_level:
+        index: 3
+        itemType: "WHEAT"
+        name: "&2产量率科研"
+        lore:
+          - '&f消耗5金币提升一次科研水平'
+      go_back:
+        index: 4
+        itemType: "ARROW"
+        name: "&2返回按钮"
+        lore:
+          - '&2返回科技树主门户'
+  book:
+    invType: "CHEST"
+    invTitle: "&2种子图鉴"
+    contents:
+      #科研种子
+      紫玫瑰二号:
+        index: 10
+        item: "紫玫瑰二号.yml" #参考紫玫瑰二号.yml中的物品配置
+        lore: #增加的显示消息
+          - '&f消耗5金币解锁科研作物'
+      小偃六号:
+        index: 11
+        item: "小偃六号.yml" #参考紫小偃六号.yml中的物品配置
+        lore: #增加的显示消息
+          - '&f消耗5金币解锁科研作物'
+      go_back:
+        index: 26
+        itemType: "ARROW"
+        name: "&2返回按钮"
+        lore:
+          - '&2返回科技树主门户'
+  tool:
+    invType: "CHEST"
+    invSize: 9
+    invTitle: "&b工具使用"
+    contents:
+      hoe_level:
+        index: 1
+        itemType: "IRON_HOE"
+        name: "&2锄头熟练度"
+        lore:
+          - '&f消耗5金币提升一次熟练水平'
+          - '&f增加锄头一次性开垦的方块数量'
+      shovel_level:
+        index: 2
+        itemType: "IRON_SHOVEL"
+        name: "&2铲子熟练度"
+        lore:
+          - '&f消耗5金币提升一次熟练水平'
+          - '&f增加铲子一次性平整的方块数量'
+      bottle_level:
+        index: 3
+        itemType: "WATER_BUCKET"
+        name: "&2灌溉熟练度"
+        lore:
+          - '&f消耗5金币提升一次熟练水平'
+          - '&f增加灌溉一次性的田地方块数量'
+      nutrition_level:
+        index: 4
+        itemType: "MILK_BUCKET"
+        name: "&2施肥熟练度"
+        lore:
+          - '&f消耗5金币提升一次熟练水平'
+          - '&f增加施肥一次性的田地方块数量'
+      grow_level:
+        index: 5
+        itemType: "SMALL_DRIPLEAF"
+        name: "&2种植熟练度"
+        lore:
+          - '&f消耗5金币提升一次熟练水平'
+          - '&f增加种植一次性的田地方块数量'
+      harvest_level:
+        index: 6
+        itemType: "SHEARS"
+        name: "&2收获熟练度"
+        lore:
+          - '&f消耗5金币提升一次熟练水平'
+          - '&f增加收获一次性的田地方块数量'
+
+      go_back:
+        index: 8
+        itemType: "ARROW"
+        name: "&2返回按钮"
+        lore:
+          - '&2返回科技树主门户'

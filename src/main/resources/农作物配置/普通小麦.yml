@@ -1,0 +1,100 @@
+state:
+  #顺序不可改变
+  - '正常生长'
+  - '死亡'
+  - '缺水'
+  - '营养不良'
+  - '倒伏'
+  - '患病'
+  - '水中毒'
+  - '盐碱'
+  - '温度异常'
+  - '蝗灾'
+name: "&6小麦种子"
+itemType: "WHEAT_SEEDS"
+lore:
+  - "&7适合种植的小麦的种子"
+  - "&a价格: 5 金币"
+grow:
+  info:
+    种子:
+      fallChance: 0.0
+      diseaseChance: 0.13
+      bottle: 5
+      powder: 5
+      water: '20-30'
+      nutrition: '60-70'
+    出苗:
+      fallChance: 0.08
+      diseaseChance: 0.18
+      bottle: 5
+      powder: 5
+      water: '30-40'
+      nutrition: '20-30'
+    幼株:
+      fallChance: 0.15
+      diseaseChance: 0.25
+      bottle: 5
+      powder: 5
+      water: '35-45'
+      nutrition: '25-35'
+    生长期:
+      fallChance: 0.25
+      diseaseChance: 0.3
+      bottle: 5
+      powder: 5
+      water: '55-85'
+      nutrition: '50-80'
+    开花育种期:
+      fallChance: 0.3
+      diseaseChance: 0.45
+      bottle: 5
+      powder: 5
+      water: '50-80'
+      nutrition: '35-55'
+    成熟期:
+      fallChance: 0.6
+      diseaseChance: 0.3
+      bottle: 5
+      powder: 5
+      water: '50-80'
+      nutrition: '20-30'
+  product:
+    seed: #种子数 种子的物品描述在上方
+      amtRange: "1-5"
+    crop: #收获作物
+      item:
+        name: "&e普通小麦" #收获固定名称
+        itemType: "WHEAT"
+        lore: #收获固定描述
+          - "&f种植收农获的作物"
+        extra: #收获额外描述
+          - "&a千粒重: &f{30-40}g" #千粒重会在30-40这个区间随机
+          - "&a蛋白质含量: &f{5-12}g/100g" #蛋白质含量会在5-12这个区间随机
+          - "&a亩穗数: &f{40-45}万/亩" #亩穗数会在40-45这个区间随机
+          - "&a抗氧化活性物质含量: &f{0-3}mg/kg" #抗氧化活性物质含量会在0-3这个区间随机
+          - "&a花青素含量: &f{0-2}mg/100g" #花青素含量会在0-2这个区间随机
+page:
+  #右键作物看到的信息
+  1:
+    #第一页
+    - '§2§l####西北农林科技大学####§r'
+    - ''
+    - '§a§l植物名称：§c§l%name%'
+    - '§a§l成长阶段：§c§l%grow%'
+    - '§a§l水分含量：§c§l%water%'
+    - '§a§l倒伏概率：§c§l%fallChance%'
+    - '§a§l患病概率：§c§l%diseaseChance%'
+    - '§a§l养分含量：§c§l%nutrition%'
+    - '§a§l植株性状：§c§l%high%'
+    - '§a§l温棚建造：§c§l%ownGreenHouse%'
+    - '§a§l土壤状态：§c§l%soliType%'
+    - ''
+    - '§2§l########植物信息########§r'
+  2:
+    #第二页
+    - '§2§l####西北农林科技大学####§r'
+    - ''
+    - '§a§l植株状态：§c§l%state%'
+    - ''
+    - '§2§l########植物信息########§r'

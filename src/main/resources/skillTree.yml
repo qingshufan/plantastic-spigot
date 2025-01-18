@@ -1,0 +1,26 @@
+skillTree:
+  seed:
+    prevalence_level: #患病率
+      cost: 5
+    resistance_level: #抗逆性
+      cost: 5
+    yield_level: #产量率
+      cost: 5
+  tool:
+    hoe_level:
+      cost: 5
+    shovel_level:
+      cost: 5
+    bottle_level:
+      cost: 5
+    nutrition_level:
+      cost: 5
+    grow_level:
+      cost: 5
+    harvest_level:
+      cost: 5
+  book:
+    紫玫瑰二号:
+      cost: 5
+    小偃六号:
+      cost: 5

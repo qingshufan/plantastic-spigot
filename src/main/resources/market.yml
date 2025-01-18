@@ -1,0 +1,356 @@
+markets:
+  shopSelector:
+    invTitle: "&2选择商店"
+    invSize: 9
+    contents:
+      toolsShop:
+        name: "&b工具商店"
+        itemType: "DIAMOND_PICKAXE"
+        lore:
+          - "点击进入工具商店"
+        index: 2
+      seedsShop:
+        name: "&a种子商店"
+        itemType: "WHEAT_SEEDS"
+        lore:
+          - "点击进入种子商店"
+        index: 4
+      cropsShop:
+        name: "&6农作物商店"
+        itemType: "WHEAT"
+        lore:
+          - "点击进入农作物商店"
+        index: 6
+
+  tools:
+    invTitle: "&2工具商店"
+    invSize: 54
+    contents:
+      WOODEN_SHOVEL:
+        name: "&7木铲"
+        itemType: "WOODEN_SHOVEL"
+        price: 2
+        lore:
+          - "&7最基础的铲子"
+          - "&a价格: 2 金币"
+        index: 10
+      STONE_SHOVEL:
+        name: "&7石铲"
+        itemType: "STONE_SHOVEL"
+        price: 4
+        lore:
+          - "&7比木铲更坚固"
+          - "&a价格: 4 金币"
+        index: 11
+      IRON_SHOVEL:
+        name: "&7铁铲"
+        itemType: "IRON_SHOVEL"
+        price: 5
+        lore:
+          - "&7经济实惠的铲子"
+          - "&a价格: 5 金币"
+        index: 12
+      GOLDEN_SHOVEL:
+        name: "&6金铲"
+        itemType: "GOLDEN_SHOVEL"
+        price: 6
+        lore:
+          - "&7虽然耐久低，但速度极快"
+          - "&a价格: 6 金币"
+        index: 13
+      DIAMOND_SHOVEL:
+        name: "&6钻石铲"
+        itemType: "DIAMOND_SHOVEL"
+        price: 8
+        lore:
+          - "&7更坚固更美观的铲子"
+          - "&a价格: 8 金币"
+        index: 14
+      NETHERITE_SHOVEL:
+        name: "&8下界合金铲"
+        itemType: "NETHERITE_SHOVEL"
+        price: 12
+        lore:
+          - "&7超高耐久的铲子"
+          - "&a价格: 12 金币"
+        index: 15
+      WOODEN_HOE:
+        name: "&7木锄"
+        itemType: "WOODEN_HOE"
+        price: 3
+        lore:
+          - "&7最简单的耕地工具"
+          - "&a价格: 3 金币"
+        index: 19
+      STONE_HOE:
+        name: "&7石锄"
+        itemType: "STONE_HOE"
+        price: 5
+        lore:
+          - "&7耐久和性能都不错"
+          - "&a价格: 5 金币"
+        index: 20
+      IRON_HOE:
+        name: "&7铁锄"
+        itemType: "IRON_HOE"
+        price: 6
+        lore:
+          - "&7可靠的耕地工具"
+          - "&a价格: 6 金币"
+        index: 21
+      GOLDEN_HOE:
+        name: "&6金锄"
+        itemType: "GOLDEN_HOE"
+        price: 7
+        lore:
+          - "&7镶嵌黄金的锄头"
+          - "&a价格: 7 金币"
+        index: 22
+      DIAMOND_HOE:
+        name: "&6钻石锄"
+        itemType: "DIAMOND_HOE"
+        price: 9
+        lore:
+          - "&7优质锄头，适合耕地"
+          - "&a价格: 9 金币"
+        index: 23
+      NETHERITE_HOE:
+        name: "&8下界合金锄"
+        itemType: "NETHERITE_HOE"
+        price: 14
+        lore:
+          - "&7耕地中的豪华之选"
+          - "&a价格: 14 金币"
+        index: 24
+      POTION:
+        name: "&7一瓶水"
+        itemType: "POTION"
+        price: 5
+        lore:
+          - "&7用于浇水，不能触发科技"
+          - "&a价格: 5 金币"
+        index: 28
+      WATER_BUCKET:
+        name: "&6浇水壶"
+        itemType: "WATER_BUCKET"
+        price: 10
+        lore:
+          - "&7用于浇水的水壶"
+          - "&7一桶只能浇一次，如果要再次浇水就需要去舀水"
+          - "&a价格: 10 金币"
+        index: 29
+      BONE_MEAL:
+        name: "&7普通肥料"
+        itemType: "BONE_MEAL"
+        price: 5
+        lore:
+          - "&7普通的肥料，效力一般"
+          - "&a价格: 5 金币"
+        index: 30
+      MILK_BUCKET:
+        name: "&6一大桶肥料"
+        itemType: "MILK_BUCKET"
+        price: 10
+        lore:
+          - "&7用于施肥的一大桶肥料，效力较强"
+          - "&a价格: 10 金币"
+        index: 31
+      GLASS:
+        name: "&6温棚魔法科技"
+        itemType: "GLASS"
+        price: 10
+        lore:
+          - "&7可以右键生成一个温棚"
+          - "&a价格: 10 金币"
+        index: 32
+      SHEARS:
+        name: "&6收割镰刀"
+        itemType: "SHEARS"
+        price: 10
+        lore:
+          - "&7左键快速收割农作物"
+          - "&a价格: 10 金币"
+        index: 33
+      backToSelector:
+        name: "&c返回市场选择"
+        itemType: "ARROW"
+        price: 0
+        lore:
+          - "点击返回选择商店"
+        index: 53  # 放在最后一个槽位
+
+  seeds:
+    invTitle: "&2种子商店"
+    invSize: 54
+    contents:
+      WHEAT_SEEDS:
+        index: 1
+        name: "&6小麦种子"
+        itemType: "WHEAT_SEEDS"
+        price: 5
+        lore:
+          - "&7适合种植的小麦的种子"
+          - "&a价格: 5 金币"
+      beetroot_seed:
+        index: 2
+        itemType: "BEETROOT_SEEDS"
+        name: "&2甜菜根种子"
+        lore:
+          - '&f普通甜菜根种子'
+          - "&a价格: 5 金币"
+        price: 5
+      carrot:
+        index: 3
+        itemType: "CARROT"
+        name: "&2胡萝卜种子"
+        lore:
+          - '&f普通胡萝卜种子'
+          - "&a价格: 5 金币"
+        price: 5
+      potato:
+        index: 4
+        itemType: "POTATO"
+        name: "&2土豆种子"
+        lore:
+          - '&f普通土豆种子'
+          - "&a价格: 5 金币"
+        price: 5
+      sweet_berries:
+        index: 5
+        itemType: "SWEET_BERRIES"
+        name: "&2浆果种子"
+        lore:
+          - '&f普通浆果种子'
+          - "&a价格: 5 金币"
+        price: 5
+      pumpkin:
+        index: 6
+        itemType: "PUMPKIN"
+        name: "&2南瓜种子"
+        lore:
+          - '&f普通南瓜种子'
+          - "&a价格: 5 金币"
+        price: 5
+      melon:
+        index: 7
+        itemType: "MELON"
+        name: "&2西瓜种子"
+        lore:
+          - '&f普通西瓜种子'
+          - "&a价格: 5 金币"
+        price: 5
+      sugar_cane:
+        index: 10
+        itemType: "SUGAR_CANE"
+        name: "&2甘蔗种子"
+        lore:
+          - '&f普通甘蔗种子'
+          - "&a价格: 5 金币"
+        price: 5
+      cactus:
+        index: 11
+        itemType: "CACTUS"
+        name: "&2仙人掌种子"
+        lore:
+          - '&f普通仙人掌种子'
+          - "&a价格: 5 金币"
+        price: 5
+      bamboo:
+        index: 12
+        itemType: "BAMBOO"
+        name: "&2竹子种子"
+        lore:
+          - '&f普通竹子种子'
+          - "&a价格: 5 金币"
+        price: 5
+      vine:
+        index: 13
+        itemType: "VINE"
+        name: "&2藤蔓种子"
+        lore:
+          - '&f普通藤蔓种子'
+          - "&a价格: 5 金币"
+        price: 5
+      kelp:
+        index: 14
+        itemType: "KELP"
+        name: "&2海带种子"
+        lore:
+          - '&f普通海带种子'
+          - "&a价格: 5 金币"
+        price: 5
+      sea_grass:
+        index: 15
+        itemType: "SEAGRASS"
+        name: "&2海草种子"
+        lore:
+          - '&f普通海草种子'
+          - "&a价格: 5 金币"
+        price: 5
+      twisting_vines:
+        index: 16
+        itemType: "TWISTING_VINES"
+        name: "&2扭曲藤蔓种子"
+        lore:
+          - '&f普通扭曲藤蔓种子'
+          - "&a价格: 5 金币"
+        price: 5
+      紫玫瑰二号:
+        name: "&6待解锁"
+        itemType: "BARRIER"
+        isBook: true #表示为特殊商品科研解锁图鉴
+        lore:
+          - "&7待解锁的科研作物"
+        price: 7
+        index: 19
+      小偃六号:
+        name: "&6待解锁"
+        itemType: "BARRIER"
+        isBook: true #表示为特殊商品科研解锁图鉴
+        lore:
+          - "&7待解锁的科研作物"
+        price: 7
+        index: 20
+      backToSelector:
+        name: "&c返回市场选择"
+        itemType: "ARROW"
+        price: 0
+        lore:
+          - "点击返回选择商店"
+        index: 53  # 放在最后一个槽位
+
+  crops:
+    invTitle: "&2农作物商店"
+    invSize: 54
+    contents:
+      WHEAT:
+        name: "&6小麦"
+        itemType: "WHEAT"
+        price: 10
+        lore:
+          - "&7成熟的小麦"
+          - "&a价格: 10 金币"
+        index: 10
+      POTATO:
+        name: "&6普通马铃薯"
+        itemType: "POTATO"
+        price: 7
+        lore:
+          - "&7甜美的马铃薯"
+          - "&a价格: 7 金币"
+        index: 11
+      紫玫瑰二号:
+        name: "&6紫玫瑰二号"
+        itemType: "CHORUS_FRUIT"
+        price: 10
+        lore:
+          - "&7甜美的马铃薯"
+          - "&a价格: 7 金币"
+        index: 12
+      backToSelector:
+        name: "&c返回市场选择"
+        itemType: "ARROW"
+        price: 0
+        lore:
+          - "点击返回选择商店"
+        index: 53  # 放在最后一个槽位

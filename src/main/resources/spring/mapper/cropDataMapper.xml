@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fan.cropsprocess.com.mapper.CropDataMapper">
+
+    <!-- Result Map for CropData -->
+    <resultMap id="CropDataResultMap" type="CropData">
+        <id column="world_name" property="loc.worldName"/>
+        <id column="x" property="loc.x"/>
+        <id column="y" property="loc.y"/>
+        <id column="z" property="loc.z"/>
+        <result column="name" property="name"/>
+        <result column="water" property="water"/>
+        <result column="nutrition" property="nutrition"/>
+        <result column="fall" property="fall"/>
+        <result column="disease" property="disease"/>
+        <result column="short_water" property="shortWater"/>
+        <result column="short_nutrition" property="shortNutrition"/>
+        <result column="death" property="death"/>
+        <result column="higher_water" property="higherWater"/>
+        <result column="higher_nutrition" property="higherNutrition"/>
+        <result column="deletes" property="delete"/>
+        <result column="op" property="op"/>
+        <result column="file_name" property="fileName"/>
+        <result column="period" property="period"/>
+        <result column="delay" property="delay"/>
+        <result column="shows" property="show"/>
+        <result column="soil_type" property="soilType"/>
+        <result column="high" property="high"/>
+        <result column="own_green_house" property="ownGreenHouse"/>
+        <result column="temperature_error" property="temperatureError"/>
+        <result column="uuid" property="uuid"/>
+        <result column="mature_time" property="matureTime"/>
+        <result column="insect" property="insect"/>
+        <collection property="diseases" javaType="java.util.List"
+                    ofType="fan.cropsprocess.com.data.disease.CropDisease">
+            <result column="disease_name"/>
+        </collection>
+    </resultMap>
+
+
+    <!-- List all crop data -->
+    <select id="list" resultMap="CropDataResultMap">
+        SELECT cd.*, cds.disease_name
+        FROM crop_data cd
+        LEFT JOIN crop_diseases cds ON cd.world_name = cds.world_name AND cd.x = cds.x AND cd.y = cds.y AND cd.z =
+        cds.z;
+    </select>
+
+    <!-- Get crop data by location data ID -->
+    <select id="get" parameterType="LocData" resultMap="CropDataResultMap">
+        SELECT cd.*, cds.disease_name
+        FROM crop_data cd
+        LEFT JOIN crop_diseases cds ON cd.world_name = cds.world_name AND cd.x = cds.x AND cd.y = cds.y AND cd.z = cds.z
+        WHERE cd.world_name = #{worldName} AND cd.x = #{x} AND cd.y = #{y} AND cd.z = #{z};
+    </select>
+
+    <!-- Check if a crop data entry exists by UUID -->
+    <select id="exist" parameterType="LocData" resultType="boolean">
+        SELECT COUNT(*) > 0 FROM crop_data WHERE world_name = #{worldName} AND x = #{x} AND y = #{y} AND z = #{z};
+    </select>
+
+    <!-- Delete crop data by location data ID -->
+    <delete id="del" parameterType="LocData">
+        DELETE FROM crop_data WHERE world_name = #{worldName} AND x = #{x} AND y = #{y} AND z = #{z};
+    </delete>
+    <insert id="set" parameterType="CropData">
+        DELETE FROM crop_data WHERE world_name = #{loc.worldName} AND x = #{loc.x} AND y = #{loc.y} AND z = #{loc.z};
+        INSERT INTO crop_data (world_name, x, y, z, name, water, nutrition, fall, disease, short_water, short_nutrition,
+        death, higher_water, higher_nutrition, deletes, op, file_name, period, delay, shows, soil_type, high,
+        own_green_house, temperature_error, uuid, mature_time, insect)
+        VALUES (#{loc.worldName}, #{loc.x}, #{loc.y}, #{loc.z}, #{name}, #{water}, #{nutrition}, #{fall}, #{disease},
+        #{shortWater}, #{shortNutrition}, #{death}, #{higherWater}, #{higherNutrition}, #{delete}, #{op}, #{fileName},
+        #{period}, #{delay}, #{show}, #{soilType}, #{high}, #{ownGreenHouse}, #{temperatureError}, #{uuid},
+        #{matureTime}, #{insect})
+        ON DUPLICATE KEY UPDATE
+        name = VALUES(name),
+        water = VALUES(water),
+        nutrition = VALUES(nutrition),
+        fall = VALUES(fall),
+        disease = VALUES(disease),
+        short_water = VALUES(short_water),
+        short_nutrition = VALUES(short_nutrition),
+        death = VALUES(death),
+        higher_water = VALUES(higher_water),
+        higher_nutrition = VALUES(higher_nutrition),
+        deletes = VALUES(deletes),
+        op = VALUES(op),
+        file_name = VALUES(file_name),
+        period = VALUES(period),
+        delay = VALUES(delay),
+        shows = VALUES(shows),
+        soil_type = VALUES(soil_type),
+        high = VALUES(high),
+        own_green_house = VALUES(own_green_house),
+        temperature_error = VALUES(temperature_error),
+        mature_time = VALUES(mature_time),
+        insect = VALUES(insect);
+
+        <!-- 根据疾病列表是否为空决定是否插入 crop_diseases 表 -->
+        <if test="diseases != null and diseases.size() > 0">
+            <foreach collection="diseases" item="disease" index="index">
+                INSERT INTO crop_diseases (world_name, x, y, z, disease_name)
+                VALUES (#{loc.worldName}, #{loc.x}, #{loc.y}, #{loc.z}, #{disease});
+            </foreach>
+        </if>
+    </insert>
+
+
+</mapper>

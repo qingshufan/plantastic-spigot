@@ -1,0 +1,93 @@
+state:
+  #顺序不可改变
+  - '正常生长'
+  - '死亡'
+  - '缺水'
+  - '营养不良'
+  - '倒伏'
+  - '患病'
+  - '水中毒'
+  - '盐碱'
+  - '温度异常'
+  - '蝗灾'
+name: '&2紫玫瑰二号马铃薯'
+itemType: "POTATO"
+lore:
+  - '&f紫玫瑰二号初级种子'
+  - "&a价格: 7 金币"
+grow:
+  info:
+    种子:
+      fallChance: 0.0
+      diseaseChance: 0.1
+      bottle: 5
+      powder: 5
+      water: '20-30'
+      nutrition: '60-70'
+    出苗:
+      fallChance: 0.05
+      diseaseChance: 0.15
+      bottle: 5
+      powder: 5
+      water: '30-40'
+      nutrition: '20-30'
+    幼株:
+      fallChance: 0.1
+      diseaseChance: 0.2
+      bottle: 5
+      powder: 5
+      water: '30-40'
+      nutrition: '20-30'
+    生长期:
+      fallChance: 0.2
+      diseaseChance: 0.2
+      bottle: 5
+      powder: 5
+      water: '50-80'
+      nutrition: '30-40'
+    成熟期:
+      fallChance: 0.4
+      diseaseChance: 0.2
+      bottle: 5
+      powder: 5
+      water: '50-80'
+      nutrition: '50-60'
+  product:
+    seed: #种子数 种子的物品描述在上方
+      amtRange: "1-5"
+    crop: #收获作物
+      item:
+        name: "&e紫玫瑰二号马铃薯" #收获固定名称
+        itemType: "CHORUS_FRUIT"
+        lore: #收获固定描述
+          - "&f种植收获的科研农作物"
+        extra: #收获额外描述
+          - "&a千粒重: &f{40-50}g" #千粒重会在40-50这个区间随机
+          - "&a蛋白质含量: &f{8-16}g/100g" #蛋白质含量会在8-16这个区间随机
+          - "&a亩穗数: &f{50-55}万/亩" #亩穗数会在50-55这个区间随机
+          - "&a抗氧化活性物质含量: &f{2-5}mg/kg" #抗氧化活性物质含量会在2-5这个区间随机
+          - "&a花青素含量: &f{1-3}mg/100g" #花青素含量会在1-3这个区间随机
+page:
+  #右键作物看到的信息
+  1:
+    #第一页
+    - '§2§l####西北农林科技大学####§r'
+    - ''
+    - '§a§l植物名称：§c§l%name%'
+    - '§a§l成长阶段：§c§l%grow%'
+    - '§a§l水分含量：§c§l%water%'
+    - '§a§l倒伏概率：§c§l%fallChance%'
+    - '§a§l患病概率：§c§l%diseaseChance%'
+    - '§a§l养分含量：§c§l%nutrition%'
+    - '§a§l植株性状：§c§l%high%'
+    - '§a§l温棚建造：§c§l%ownGreenHouse%'
+    - '§a§l土壤状态：§c§l%soliType%'
+    - ''
+    - '§2§l########植物信息########§r'
+  2:
+    #第二页
+    - '§2§l####西北农林科技大学####§r'
+    - ''
+    - '§a§l植株状态：§c§l%state%'
+    - ''
+    - '§2§l########植物信息########§r'

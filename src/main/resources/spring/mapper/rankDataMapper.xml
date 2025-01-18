@@ -1,0 +1,41 @@
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN' 'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='fan.cropsprocess.com.mapper.RankDataMapper'>
+    <!-- List all rank data records -->
+    <select id="list" resultType="RankData">
+        select * from rank_data;
+    </select>
+
+    <!-- Get a specific rank data record by UUID -->
+    <select id="get" parameterType="String" resultType="RankData">
+        select * from rank_data where uuid = #{uuid};
+    </select>
+
+    <!-- Check if a rank data record exists by UUID -->
+    <select id="exist" parameterType="String" resultType="boolean">
+        select count(*) > 0 from rank_data where uuid = #{uuid};
+    </select>
+
+    <!-- Insert or update a rank data record (upsert) -->
+    <insert id="set" parameterType="RankData">
+        INSERT INTO rank_data (uuid, prevalence_level, resistance_level, yield_level, books, hoe_level, shovel_level,
+        bottle_level, nutrition_level, grow_level, harvest_level)
+        VALUES (#{uuid}, #{prevalenceLevel}, #{resistanceLevel}, #{yieldLevel}, #{books, jdbcType=BLOB}, #{hoeLevel},
+        #{shovelLevel}, #{bottleLevel}, #{nutritionLevel}, #{growLevel}, #{harvestLevel})
+        ON DUPLICATE KEY UPDATE
+        prevalence_level = VALUES(prevalence_level),
+        resistance_level = VALUES(resistance_level),
+        yield_level = VALUES(yield_level),
+        books = VALUES(books),
+        hoe_level = VALUES(hoe_level),
+        shovel_level = VALUES(shovel_level),
+        bottle_level = VALUES(bottle_level),
+        nutrition_level = VALUES(nutrition_level),
+        grow_level = VALUES(grow_level),
+        harvest_level = VALUES(harvest_level);
+    </insert>
+
+    <!-- Delete a rank data record by UUID -->
+    <delete id="del" parameterType="String">
+        delete from rank_data where uuid = #{uuid};
+    </delete>
+</mapper>
