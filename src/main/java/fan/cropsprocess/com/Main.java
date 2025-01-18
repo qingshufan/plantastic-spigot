@@ -43,9 +43,6 @@ public class Main extends JavaPlugin {
         CpCore.cpcore.loadConfig("skillTree.yml");
         CpCore.cpcore.loadConfig("market.yml");
         CpCore.cpcore.loadConfig("deploy.yml");
-        CpCore.cpcore.loadConfig("农作物配置/普通小麦.yml");
-        CpCore.cpcore.loadConfig("农作物配置/紫玫瑰二号.yml");
-        CpCore.cpcore.loadConfig("农作物配置/小偃六号.yml");
 
         CpCore.cpcore.loadRedis();
         CpCore.cpconfig.loadYmlFile();
@@ -75,7 +72,7 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new SkillTreeSeedListener(), this);
         Bukkit.getPluginManager().registerEvents(new SkillTreeToolListener(), this);
         Bukkit.getPluginManager().registerEvents(new SkillTreeBookListener(), this);
-        //天气改变线程
+
         new WeatherManager().startWeatherCycle();
 
     }
