@@ -1,6 +1,6 @@
 # Plantastic
 
-##Precautions
+## Precautions
 
 1. For students who have already downloaded the Spigot dependency and added the Lombok Maven dependency, please comment out the following line in the pom tree before Reload Maven to complete the Lombok download
 
@@ -13,7 +13,7 @@
 </repository>
 ```
 
-##Environment construction
+## Environment construction
 
 1. Download and install IntelliJ IDEA Community Edition 2023.2.1
 
