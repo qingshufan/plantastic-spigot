@@ -27,7 +27,7 @@ https://blog.csdn.net/m0_46816573/article/details/119298361
 
 4. Open IDEA, go to File ->New ->Project from Version Control. On the first line, enter the address of this project
 
-https://git.nwafu.edu.cn/qingshufan/plantastic-spigot.git
+https://github.com/qingshufan/plantastic-spigot
 
 On the second line, select the path where you store the project, an empty directory
 
